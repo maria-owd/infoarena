@@ -6,7 +6,7 @@
 int main(){
 
     FILE *in, *out;
-    int a,b,d;
+    int a,b;
 
     in = fopen("cmmdc.in","r");
     out = fopen("cmmdc.out", "w");
@@ -14,16 +14,16 @@ int main(){
     fscanf(in,"%d",&a);
     fscanf(in, "%d", &b );
 
-    d = 0;
-
-    for(int i=2; i<=a; i++){
-        if(a%i==0 && b%i==0){
-            d=i;
-        }
+    // Algoritmul lui Euclid
+    
+    while(b!=0){
+        int t=b;
+        b=a%b;
+        a=t;
     }
 
 
-    fprintf(out, "%d",d);
+    fprintf(out, "%d",a);
 
     return 0;
 
