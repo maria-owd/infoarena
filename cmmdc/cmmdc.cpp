@@ -6,7 +6,7 @@
 int main(){
 
     FILE *in, *out;
-    int a,b;
+    int a,b,d;
 
     in = fopen("cmmdc.in","r");
     out = fopen("cmmdc.out", "w");
@@ -22,7 +22,9 @@ int main(){
         a=t;
     }
 
-
+    if(a==1){
+        a=0;
+    }
     fprintf(out, "%d",a);
 
     return 0;
